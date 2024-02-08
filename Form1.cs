@@ -258,7 +258,8 @@ namespace FileManager
                     listView.Items.Clear();
                     foreach (FileInfo file in files)
                     {
-                        listView.Items.Add(file.Name, 1);
+                        
+                        listView.Items.Add(file.Name, ExtentionToImg(file.Extension));
                     }
                     foreach (var dir in dirs)
                     {
@@ -271,6 +272,85 @@ namespace FileManager
             {
                 throw new Exception(ex.Message);
             }
+        }
+        private int ExtentionToImg(string fileExt)
+        {
+            int img = 1;
+            switch (fileExt)
+            {
+                case ".doc":
+                case ".docx":
+                case ".txt":
+                    img = 2;
+                    break;
+                case ".dll":
+                case ".drv":
+                case ".ini":
+                case ".tmp":
+                case ".sys":
+                    img = 3;
+                    break;
+                case ".psd":
+                case ".png":
+                case ".svg":
+                case ".jpg":
+                case ".jpeg":
+                case ".bmp":
+                case ".tif":
+                case ".tiff":
+                case ".gif":
+                    img = 4;
+                    break;
+                case ".mp4":
+                case ".avi":
+                case ".mov":
+                case ".flv":
+                    img = 5;
+                    break;
+                case ".flac":
+                case ".mp3":
+                case ".aac":
+                case ".ogg":
+                case ".vma":
+                case ".wav":
+                case ".wave":
+                    img = 6;
+                    break;
+                case ".ppt":
+                case ".pptx":
+                    img = 7;
+                    break;
+                case ".pdf":
+                    img = 8;
+                    break;
+                case ".xls":
+                case ".xlsx":
+                    img = 9;
+                    break;
+                case ".css":
+                case ".js":
+                case ".php":
+                case ".xml":
+                case ".json":
+                case ".html":
+                    img = 10;
+                    break;
+                case ".com":
+                case ".bat":
+                case ".exe":
+                    img = 11;
+                    break;
+                case ".7z":
+                case ".jar":
+                case ".rar":
+                case ".zip":
+                    img = 12;
+                    break;
+                default:
+                    img = 1;
+                    break;
+            }
+            return img;
         }
         private void removeLastSlash(TextBox filePathTextBox)
         {

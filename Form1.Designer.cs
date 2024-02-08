@@ -111,8 +111,19 @@
             // 
             this.leftIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("leftIconList.ImageStream")));
             this.leftIconList.TransparentColor = System.Drawing.Color.Transparent;
-            this.leftIconList.Images.SetKeyName(0, "folder.png");
-            this.leftIconList.Images.SetKeyName(1, "checklist.png");
+            this.leftIconList.Images.SetKeyName(0, "icons8-folder-48.png");
+            this.leftIconList.Images.SetKeyName(1, "icons8-file-50.png");
+            this.leftIconList.Images.SetKeyName(2, "icons8-txt-48.png");
+            this.leftIconList.Images.SetKeyName(3, "icons8-system-48.png");
+            this.leftIconList.Images.SetKeyName(4, "icons8-image-48.png");
+            this.leftIconList.Images.SetKeyName(5, "icons8-video-48.png");
+            this.leftIconList.Images.SetKeyName(6, "icons8-audio-48.png");
+            this.leftIconList.Images.SetKeyName(7, "icons8-microsoft-powerpoint-48.png");
+            this.leftIconList.Images.SetKeyName(8, "icons8-pdf-48.png");
+            this.leftIconList.Images.SetKeyName(9, "icons8-xsl-48.png");
+            this.leftIconList.Images.SetKeyName(10, "icons8-web-48.png");
+            this.leftIconList.Images.SetKeyName(11, "icons8-file-contains-code-to-program-binary-file-system-48.png");
+            this.leftIconList.Images.SetKeyName(12, "icons8-archive-48.png");
             // 
             // leftFilePathTextBox
             // 
@@ -190,8 +201,19 @@
             // 
             this.rightIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("rightIconList.ImageStream")));
             this.rightIconList.TransparentColor = System.Drawing.Color.Transparent;
-            this.rightIconList.Images.SetKeyName(0, "folder.png");
-            this.rightIconList.Images.SetKeyName(1, "checklist.png");
+            this.rightIconList.Images.SetKeyName(0, "icons8-folder-48.png");
+            this.rightIconList.Images.SetKeyName(1, "icons8-file-50.png");
+            this.rightIconList.Images.SetKeyName(2, "icons8-txt-48.png");
+            this.rightIconList.Images.SetKeyName(3, "icons8-system-48.png");
+            this.rightIconList.Images.SetKeyName(4, "icons8-image-48.png");
+            this.rightIconList.Images.SetKeyName(5, "icons8-video-48.png");
+            this.rightIconList.Images.SetKeyName(6, "icons8-audio-48.png");
+            this.rightIconList.Images.SetKeyName(7, "icons8-microsoft-powerpoint-48.png");
+            this.rightIconList.Images.SetKeyName(8, "icons8-pdf-48.png");
+            this.rightIconList.Images.SetKeyName(9, "icons8-xsl-48.png");
+            this.rightIconList.Images.SetKeyName(10, "icons8-web-48.png");
+            this.rightIconList.Images.SetKeyName(11, "icons8-file-contains-code-to-program-binary-file-system-48.png");
+            this.rightIconList.Images.SetKeyName(12, "icons8-archive-48.png");
             // 
             // rightBackBtn
             // 
@@ -317,6 +339,7 @@
             // 
             // leftCopy
             // 
+            this.leftCopy.Image = global::FileManager.Properties.Resources.icons8_copy_15;
             this.leftCopy.Name = "leftCopy";
             this.leftCopy.Size = new System.Drawing.Size(117, 22);
             this.leftCopy.Text = "Copy";
@@ -324,6 +347,7 @@
             // 
             // leftDelete
             // 
+            this.leftDelete.Image = global::FileManager.Properties.Resources.icons8_delete_15;
             this.leftDelete.Name = "leftDelete";
             this.leftDelete.Size = new System.Drawing.Size(117, 22);
             this.leftDelete.Text = "Delete";
@@ -331,6 +355,7 @@
             // 
             // leftRename
             // 
+            this.leftRename.Image = global::FileManager.Properties.Resources.icons8_rename_15;
             this.leftRename.Name = "leftRename";
             this.leftRename.Size = new System.Drawing.Size(117, 22);
             this.leftRename.Text = "Rename";
@@ -338,6 +363,7 @@
             // 
             // leftOpen
             // 
+            this.leftOpen.Image = global::FileManager.Properties.Resources.icons8_open_15;
             this.leftOpen.Name = "leftOpen";
             this.leftOpen.Size = new System.Drawing.Size(117, 22);
             this.leftOpen.Text = "Open";
@@ -355,6 +381,7 @@
             // 
             // rightCopy
             // 
+            this.rightCopy.Image = global::FileManager.Properties.Resources.icons8_copy_15;
             this.rightCopy.Name = "rightCopy";
             this.rightCopy.Size = new System.Drawing.Size(117, 22);
             this.rightCopy.Text = "Copy";
@@ -362,6 +389,7 @@
             // 
             // rightDelete
             // 
+            this.rightDelete.Image = global::FileManager.Properties.Resources.icons8_delete_15;
             this.rightDelete.Name = "rightDelete";
             this.rightDelete.Size = new System.Drawing.Size(117, 22);
             this.rightDelete.Text = "Delete";
@@ -369,6 +397,7 @@
             // 
             // rightRename
             // 
+            this.rightRename.Image = global::FileManager.Properties.Resources.icons8_rename_15;
             this.rightRename.Name = "rightRename";
             this.rightRename.Size = new System.Drawing.Size(117, 22);
             this.rightRename.Text = "Rename";
@@ -376,6 +405,7 @@
             // 
             // rightOpen
             // 
+            this.rightOpen.Image = global::FileManager.Properties.Resources.icons8_open_15;
             this.rightOpen.Name = "rightOpen";
             this.rightOpen.Size = new System.Drawing.Size(117, 22);
             this.rightOpen.Text = "Open";
