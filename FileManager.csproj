@@ -92,5 +92,14 @@
   <ItemGroup>
     <None Include="Res\icons8-copy-15.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\icons8-new-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\icons8-folder-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\icons8-file-15.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

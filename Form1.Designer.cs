@@ -57,11 +57,17 @@
             this.leftDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.leftRename = new System.Windows.Forms.ToolStripMenuItem();
             this.leftOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftNewFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.rightContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.rightCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.rightDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.rightRename = new System.Windows.Forms.ToolStripMenuItem();
             this.rightOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.rightNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.rightNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.rightNewFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.leftContextMenu.SuspendLayout();
             this.rightContextMenu.SuspendLayout();
             this.SuspendLayout();
@@ -291,7 +297,7 @@
             // 
             this.leftFileSize.AutoSize = true;
             this.leftFileSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.leftFileSize.Location = new System.Drawing.Point(313, 534);
+            this.leftFileSize.Location = new System.Drawing.Point(346, 534);
             this.leftFileSize.Name = "leftFileSize";
             this.leftFileSize.Size = new System.Drawing.Size(55, 16);
             this.leftFileSize.TabIndex = 8;
@@ -301,7 +307,7 @@
             // 
             this.leftFileSizeLabel.AutoSize = true;
             this.leftFileSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.leftFileSizeLabel.Location = new System.Drawing.Point(374, 534);
+            this.leftFileSizeLabel.Location = new System.Drawing.Point(407, 534);
             this.leftFileSizeLabel.Name = "leftFileSizeLabel";
             this.leftFileSizeLabel.Size = new System.Drawing.Size(15, 16);
             this.leftFileSizeLabel.TabIndex = 8;
@@ -311,7 +317,7 @@
             // 
             this.rightFileSize.AutoSize = true;
             this.rightFileSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rightFileSize.Location = new System.Drawing.Point(921, 534);
+            this.rightFileSize.Location = new System.Drawing.Point(969, 534);
             this.rightFileSize.Name = "rightFileSize";
             this.rightFileSize.Size = new System.Drawing.Size(55, 16);
             this.rightFileSize.TabIndex = 8;
@@ -321,7 +327,7 @@
             // 
             this.rightFileSizeLabel.AutoSize = true;
             this.rightFileSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rightFileSizeLabel.Location = new System.Drawing.Point(982, 534);
+            this.rightFileSizeLabel.Location = new System.Drawing.Point(1030, 534);
             this.rightFileSizeLabel.Name = "rightFileSizeLabel";
             this.rightFileSizeLabel.Size = new System.Drawing.Size(15, 16);
             this.rightFileSizeLabel.TabIndex = 8;
@@ -333,9 +339,10 @@
             this.leftCopy,
             this.leftDelete,
             this.leftRename,
-            this.leftOpen});
+            this.leftOpen,
+            this.leftNew});
             this.leftContextMenu.Name = "contextMenuStrip1";
-            this.leftContextMenu.Size = new System.Drawing.Size(118, 92);
+            this.leftContextMenu.Size = new System.Drawing.Size(118, 114);
             // 
             // leftCopy
             // 
@@ -369,15 +376,42 @@
             this.leftOpen.Text = "Open";
             this.leftOpen.Click += new System.EventHandler(this.leftOpen_Click);
             // 
+            // leftNew
+            // 
+            this.leftNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leftNewFile,
+            this.leftNewFolder});
+            this.leftNew.Image = global::FileManager.Properties.Resources.icons8_new_15;
+            this.leftNew.Name = "leftNew";
+            this.leftNew.Size = new System.Drawing.Size(117, 22);
+            this.leftNew.Text = "New";
+            // 
+            // leftNewFile
+            // 
+            this.leftNewFile.Image = global::FileManager.Properties.Resources.icons8_file_15;
+            this.leftNewFile.Name = "leftNewFile";
+            this.leftNewFile.Size = new System.Drawing.Size(107, 22);
+            this.leftNewFile.Text = "File";
+            this.leftNewFile.Click += new System.EventHandler(this.leftNewFile_Click);
+            // 
+            // leftNewFolder
+            // 
+            this.leftNewFolder.Image = global::FileManager.Properties.Resources.icons8_folder_15;
+            this.leftNewFolder.Name = "leftNewFolder";
+            this.leftNewFolder.Size = new System.Drawing.Size(107, 22);
+            this.leftNewFolder.Text = "Folder";
+            this.leftNewFolder.Click += new System.EventHandler(this.leftNewFolder_Click);
+            // 
             // rightContextMenu
             // 
             this.rightContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rightCopy,
             this.rightDelete,
             this.rightRename,
-            this.rightOpen});
+            this.rightOpen,
+            this.rightNew});
             this.rightContextMenu.Name = "rightContextMenu";
-            this.rightContextMenu.Size = new System.Drawing.Size(118, 92);
+            this.rightContextMenu.Size = new System.Drawing.Size(118, 114);
             // 
             // rightCopy
             // 
@@ -410,6 +444,32 @@
             this.rightOpen.Size = new System.Drawing.Size(117, 22);
             this.rightOpen.Text = "Open";
             this.rightOpen.Click += new System.EventHandler(this.rightOpen_Click);
+            // 
+            // rightNew
+            // 
+            this.rightNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rightNewFile,
+            this.rightNewFolder});
+            this.rightNew.Image = global::FileManager.Properties.Resources.icons8_new_15;
+            this.rightNew.Name = "rightNew";
+            this.rightNew.Size = new System.Drawing.Size(117, 22);
+            this.rightNew.Text = "New";
+            // 
+            // rightNewFile
+            // 
+            this.rightNewFile.Image = global::FileManager.Properties.Resources.icons8_file_15;
+            this.rightNewFile.Name = "rightNewFile";
+            this.rightNewFile.Size = new System.Drawing.Size(107, 22);
+            this.rightNewFile.Text = "File";
+            this.rightNewFile.Click += new System.EventHandler(this.rightNewFile_Click);
+            // 
+            // rightNewFolder
+            // 
+            this.rightNewFolder.Image = global::FileManager.Properties.Resources.icons8_folder_15;
+            this.rightNewFolder.Name = "rightNewFolder";
+            this.rightNewFolder.Size = new System.Drawing.Size(107, 22);
+            this.rightNewFolder.Text = "Folder";
+            this.rightNewFolder.Click += new System.EventHandler(this.rightNewFolder_Click);
             // 
             // FileManager
             // 
@@ -480,6 +540,12 @@
         private System.Windows.Forms.ToolStripMenuItem rightRename;
         private System.Windows.Forms.ToolStripMenuItem leftOpen;
         private System.Windows.Forms.ToolStripMenuItem rightOpen;
+        private System.Windows.Forms.ToolStripMenuItem rightNew;
+        private System.Windows.Forms.ToolStripMenuItem rightNewFile;
+        private System.Windows.Forms.ToolStripMenuItem rightNewFolder;
+        private System.Windows.Forms.ToolStripMenuItem leftNew;
+        private System.Windows.Forms.ToolStripMenuItem leftNewFile;
+        private System.Windows.Forms.ToolStripMenuItem leftNewFolder;
     }
 }
 

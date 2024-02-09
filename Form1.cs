@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using File = System.IO.File;
+using System.Xml.Linq;
+
 namespace FileManager
 {
     public partial class FileManager : Form
@@ -65,7 +67,6 @@ namespace FileManager
             catch (Exception ex)
             {
                 left.goBack(leftFilePathTextBox);
-                throw new Exception(ex.Message);
             }
         }
         private void rightListView_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -77,7 +78,6 @@ namespace FileManager
             catch (Exception ex)
             {
                 right.goBack(rightFilePathTextBox);
-                throw new Exception(ex.Message);
             }
         }
 
@@ -222,6 +222,51 @@ namespace FileManager
         {
             left.Open();
         }
+
+        private void rightNewFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists(right.FilePath + "/NewFile.txt"))
+                {
+                    File.Create(right.FilePath + "/NewFile.txt");
+                    rightListView.Items.Add("NewFile.txt", 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+        private void rightNewFolder_Click(object sender, EventArgs e)
+        {
+
+            Directory.CreateDirectory(right.FilePath + "/NewFolder");
+            rightListView.Items.Add("NewFolder", 0);
+            Refresh();
+        }
+
+        private void leftNewFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists(right.FilePath + "/NewFile.txt"))
+                {
+                    File.Create(left.FilePath + "/NewFile.txt");
+                    leftListView.Items.Add("NewFile.txt", 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+        private void leftNewFolder_Click(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(left.FilePath + "/NewFolder");
+            leftListView.Items.Add("NewFolder", 0);
+            Refresh();
+        }
     }
     class Window
     {
@@ -244,10 +289,10 @@ namespace FileManager
                 if (IsFile)
                 {
                     tempFilePath = this.FilePath + "/" + this.CurrentlySelectedItem;
-                    FileInfo fd = new FileInfo(tempFilePath);
-                    fileNameLabel.Text = fd.Name;
-                    fileTypeLabel.Text = fd.Extension;
-                    fileSizeLabel.Text = (fd.Length / 1000).ToString() + " kb";
+                    FileInfo fi = new FileInfo(tempFilePath);
+                    fileNameLabel.Text = NameConverter(fi.Name);
+                    fileTypeLabel.Text = fi.Extension;
+                    fileSizeLabel.Text = BytesUnitsConverter(fi.Length);
                 }
                 else
                 {
@@ -272,6 +317,39 @@ namespace FileManager
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        private string BytesUnitsConverter(long bytes)
+        {
+            string line = bytes.ToString();
+            long tmp;
+            if (line.Length > 10)
+            {
+                tmp = bytes / (1024 * 1024 * 1024);
+                line = tmp.ToString() + " GB";
+                return line;
+            }
+            else if (line.Length > 7)
+            {
+                tmp = bytes / (1024*1024);
+                line = tmp.ToString() + " MB";
+                return line;
+            }
+            else if (line.Length > 4)
+            {
+                tmp = bytes / 1024;
+                line = tmp.ToString() + " kB";
+                return line;
+            }
+            return line + " b";
+        }
+        private string NameConverter(string name)
+        {
+            if (name.Length > 35)
+            {
+                return name.Substring(0, 35) + "...";
+            }
+            return name;
         }
         private int ExtentionToImg(string fileExt)
         {
